@@ -21,11 +21,11 @@ const Navbar = () => {
         <Bookmark />
       </div>
 
-      <div className="size-8 md:size-10 rounded-full overflow-hidden lg:mt-auto">
+      <div className="size-6 md:size-8 lg:size-10 rounded-full lg:mt-auto">
         <img
           src="/avatar.jpg"
           alt="user avatar"
-          className="h-full w-full"
+          className="h-full w-full rounded-full"
         />
       </div>
     </nav>
