@@ -1,0 +1,35 @@
+import Bookmark from "./Bookmark"
+import FilmStrip from "./FilmStrip"
+import Grid from "./Grid"
+import Logo from "./Logo"
+import Tv from "./Tv"
+
+const Navbar = () => {
+  return (
+    <nav
+      className="
+        bg-[#161D2F] rounded-0 sm:rounded-[10px] md:rounded-[20px]
+        flex px-4 py-4.5 md:p-6 lg:py-8 lg:px-7  items-center justify-between lg:flex-col lg:h-[85vh] 
+      "
+    >
+      <Logo />
+
+      <div className="flex items-center gap-8 md:gap-10 lg:mt-16 lg:flex-col lg:gap-10">
+        <Grid />
+        <FilmStrip />
+        <Tv />
+        <Bookmark />
+      </div>
+
+      <div className="size-8 md:size-10 rounded-full overflow-hidden lg:mt-auto">
+        <img
+          src="/avatar.jpg"
+          alt="user avatar"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    </nav>
+  )
+}
+
+export default Navbar
