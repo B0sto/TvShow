@@ -1,15 +1,18 @@
-import Navbar from "./components/common/Navbar"
-import SearchBar from "./components/common/SearchBar"
+import { BrowserRouter, Route, Routes } from "react-router"
+import HomePage from "./pages/HomePage"
+import BookmarksPage from "./pages/BookmarksPage"
+import { BookmarkProvider } from "./components/context/BookmarkContext"
 
 function App() {
   return (
-    <div className="p-0 sm:p-4 md:p-6 lg:p-8 bg-[#10141E] flex flex-col lg:flex-row gap-y-6 md:gap-y-8 gap-x-9">
-      <Navbar />
-
-      <main className="lg:mt-5">
-        <SearchBar />
-      </main>
-    </div>
+    <BookmarkProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="/bookmarks" element={<BookmarksPage />} />
+        </Routes>
+      </BrowserRouter>
+    </BookmarkProvider>
   )
 }
 
