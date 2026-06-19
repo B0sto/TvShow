@@ -1,8 +1,8 @@
-import Bookmark from "./Bookmark"
-import FilmStrip from "./FilmStrip"
-import Grid from "./Grid"
-import Logo from "./Logo"
-import Tv from "./Tv"
+import Bookmark from "../icons/Bookmark"
+import FilmStrip from "../icons/FilmStrip"
+import Grid from "../icons/Grid"
+import Logo from "../icons/Logo"
+import Tv from "../icons/Tv"
 
 const Navbar = () => {
   return (
@@ -25,7 +25,7 @@ const Navbar = () => {
         <img
           src="/avatar.jpg"
           alt="user avatar"
-          className="h-full w-full object-cover"
+          className="h-full w-full"
         />
       </div>
     </nav>
