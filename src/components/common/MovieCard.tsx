@@ -11,7 +11,7 @@ type MovieCardProps = {
 
 const MovieCard = ({ movie }: MovieCardProps) => {
     const { isBookmarked, toggleBookmark } = useBookmark();
-    const bookmarked = isBookmarked(movie.title)
+    const bookmarked = isBookmarked(movie.title);
 
     return (
         <div className="max-w-70 min-w-41 text-white">
@@ -23,7 +23,15 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                 >
                     <CardBookmark filled={bookmarked} />
                 </button>
-                <img src={movie.thumbnail.regular.medium} alt={movie.title} className="w-full h-full rounded-lg" />
+                <picture>
+                    <source media="(min-width: 1024px)" srcSet={movie.thumbnail.regular.large} />
+                    <source media="(min-width: 768px)" srcSet={movie.thumbnail.regular.medium} />
+                    <img
+                        src={movie.thumbnail.regular.small}
+                        alt={movie.title}
+                        className="w-full h-full rounded-lg"
+                    />
+                </picture>
             </div>
             <div className="text-[#8B93A7] text-[11px] md:text-[13px] flex items-center gap-x-1.5 mt-1.5">
                 <p>{movie.year}</p>
